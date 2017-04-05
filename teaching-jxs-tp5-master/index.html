@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>InfoPok vous donne les informations sur tous les pokémons !</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+</head>
+<body ng-app="pokedex">
+		
+    <!-- Pour envelopper le pokedex (deux modèles différents) avec le même contrôleur -->
+    <div id="wrapper" ng-controller="SearchCtrl">
+
+        <!-- Insertion de la barre de recherche -->
+        <div research></div>
+
+        <!-- Pokedex -->
+        <!-- ------- -->
+        <div class="container jumbotron">
+
+            <!-- Search -->
+            <div class="wrapper-search">
+
+                <div class="row">
+                    <form >
+					
+                        <div class="form-group col-xs-4 col-xs-offset-4">
+                            <label for="id"><p>InfoPok </p></label>
+                            
+							<nav class="">
+										<input  name="id" class="form-control" id="id" placeholder="ID ou nom du pokémon" ng-load="deleteThisString()">
+										<a class="navbar-brand" href="index.html"></a>
+										<div class="container-fluid">
+											<!-- Regroupement pour un meilleur affichage mobile -->
+											<div class="navbar-header">
+												<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+													<span class="sr-only">Toggle navigation</span>
+													<span class="icon-bar"></span>
+													<span class="icon-bar"></span>
+													<span class="icon-bar"></span>
+												</button>
+												
+											</div>
+
+											<!-- Recueil des liens de navigation, les formulaires et autres contenus pour la migration -->
+											<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+												
+													<div class="btn-group">
+														<input id="filter" ng-model="searchPoke" class="form-control" placeholder="Filtre" ng-change="displayTheCross()">
+														<span id="clear" class="glyphicon glyphicon-remove-circle hidden" ng-click="clear()"></span>
+													</div>
+
+													<div class="form-group">
+														<select class="form-control" name="pokemonList" id="pokemonList" ng-model="data.selectedPoke" ng-change="onChangeOption()" >
+															<option  ng-repeat="pokemon in data.pokemons | filter:searchPoke" value="{{pokemon.pokemon_species.name}} ">{{ pokemon.entry_number }} - {{pokemon.pokemon_species.name}}</option>
+														</select>
+													</div>
+												
+											</div>
+										</div>
+							</nav>			
+                        </div> 
+						
+
+                        <div class="form-group col-xs-4 col-xs-offset-4">
+                            <button id="btn_go" class="btn btn-primary" ng-click="go()">Recherche !</button>
+							<button class="btn btn-primary" type="reset" value="Reset">Réinitialiser</button>
+							
+                        </div>
+                    </form>
+                </div> 
+
+                <div class="row">
+                    <p id="p_loader" class="text-center">Request processing ... Please wait ...</p>
+                </div>
+
+                <!-- Informations Pokémon  -->
+                <div id="pokeInfoResult" class="row">
+
+                    <p>Voici le Pokémon que vous avez sélectionné :</p>
+                    <ul class="list-group col-xs-6 col-xs-offset-2">
+                        <li>
+                            <img style="width:30%;"
+                                 src="http://img.pokemondb.net/artwork/{{ poke.Nom }}.jpg"
+                                 class="img-responsive col-xs-offset-6 img-rounded">
+                        </li>
+                    </ul>
+                    <ul class="pokeInfoResultListItem list-group col-xs-6 col-xs-offset-3" ng-repeat="(key, val) in poke">
+                        <li class="list-group-item list-group-item-info"><b>{{ key }}</b> : {{ val }}</li>
+                    </ul>
+
+                </div> 
+
+
+
+            </div> 
+
+        </div>
+
+    </div>
+
+    <!-- Dependences -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/angular.min.js"></script>
+
+    <!-- Pokedex app -->
+    <script src="assets/js/pokedex.js"></script>
+
+</body>
+</html>
