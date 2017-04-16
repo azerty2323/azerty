@@ -2,7 +2,7 @@
 
 ![Pokémons](http://i.imgur.com/oJkBNgX.jpg "Let's find them all !")
 
-Ce TP a été réalisé par le binôme Quentin LAGADEC et Nicolas GIGOU dans le cadre des TP du cours de SIR. L'objectif de ce projet était de développer un pokédex en AngularJS en récupérant les informations nécessaires via l'API du site Pokeapi.co.
+Ce TP a été réalisé par le binôme Ghislain JUIMO et Souleymane SARR dans le cadre des TP du cours de SIR. L'objectif de ce projet était de développer un pokédex en AngularJS en récupérant les informations nécessaires via l'API du site Pokeapi.co.
 
 *Les paragraphes suivants permettent une meilleure compréhension de ce qui a été demandé pendant le TP. Suite à la motivation ressentie par le binôme vis-à-vis du sujet, certains éléments non demandés ont été rajoutés et d'autres retirés au fur et à mesure du développement pour améliorer le design de l'application ou pour nettoyer le code de fonctionnalités inutiles. Afin de profiter pleinement de l'expérience, nous vous proposons de tirer le projet en lançant la commande :*
 
