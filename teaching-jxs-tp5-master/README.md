@@ -10,7 +10,7 @@ Ce TP a été réalisé par le binôme Ghislain JUIMO et Souleymane SARR dans le
 
 ## Fonctionnement de l'application
 
-![Fonctionnement]
+
 
 Lors de l'arrivée sur la page d'accueil de l'application, un message apparaît afin de prévenir l'utilisateur qu'une requête est en cours (celle qui récupère la liste de tous les pokémons). Une fois la requête terminée, le message disparaît. Vous verrez un champ texte au centre de l'image vous permettant de saisir le nom ou l'ID du pokémon qui vous intéresse si toutefois vous le connaissez. Si vous n'êtes pas sûr de son nom ou si vous voulez vérifier avant de lancer une recherche, utilisez le filtre dans le bandeau supérieur. 
 
@@ -277,7 +277,3 @@ Et dans la vue principale
   </ul>
 </div> <!-- end .row -->
 ```
-
-## Nota Bene
-
-Ce projet, bien que mis en pause le temps des révisions de partiels, est toujours en cours de développement. Il n'est pas inenvisageable que l'application soit implémentée sur le site personnel de Nicolas afin de montrer le résultat et de partager, après nettoyage du code, une application AngularJS intéressante et ludique.
